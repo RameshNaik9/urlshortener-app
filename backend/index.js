@@ -14,11 +14,6 @@ const PORT = process.env.PORT || 8001;
 const buildPath = path.join(__dirname, '../frontend/build');
 app.use(express.static(buildPath));
 
-// Serve static files from the 'frontend/public' directory
-const publicPath = path.join(__dirname, '../frontend/public');
-app.use(express.static(publicPath));
-
-
 const databaseUrl = process.env.MONGODB_URI;
 connectToMongoDB(databaseUrl)
   .then(() => logger.info('MongoDB connected'))
