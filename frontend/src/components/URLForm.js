@@ -4,7 +4,7 @@ import URLList from './URLList';
 require('dotenv').config();
 
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://urlshortener-app.azurewebsites.net';
 // const API_BASE_URL = "http://localhost:8001"
 console.log('API_BASE_URL:', API_BASE_URL);
 
