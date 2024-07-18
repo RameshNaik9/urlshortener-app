@@ -22,22 +22,26 @@ jobs:
         run: |
           cd frontend
           npm install
+
       - name: Install backend dependencies
         run: |
           cd backend
           npm install
+
       - name: Build frontend
         env:
           CI: false
         run: |
           cd frontend
           npm run build
+
       - name: Prepare ReleaseGAA Artifact Structure
         run: |
-          mkdir -p releaseGAA/frontend/build
+          mkdir -p releaseGAA/frontend
           mkdir -p releaseGAA/backend
-          cp -r frontend/build/* releaseGAA/frontend/build/
+          cp -r frontend/build releaseGAA/frontend/
           cp -r backend/* releaseGAA/backend/
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
