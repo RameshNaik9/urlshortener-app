@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import URLList from './URLList';
-require('dotenv').config();
-
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://urlshortener-app.azurewebsites.net';
 // const API_BASE_URL = "http://localhost:8001"
