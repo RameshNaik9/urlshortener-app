@@ -1,19 +1,15 @@
-name: CI/CD Pipeline
+name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -24,22 +20,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
 
-      - name: Archive build output
+      - name: Prepare release artifact
+        run: |
+          mkdir -p releaseGAA/frontend
+          cp -r frontend/build releaseGAA/frontend/
+          cp -r backend releaseGAA/
+
+      - name: Upload release artifact
         uses: actions/upload-artifact@v4
         with:
           name: releaseGAA
-          path: |
-            frontend/build
-            backend
-          retention-days: 1
+          path: releaseGAA/
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-
     steps:
       - name: Download release artifact
         uses: actions/download-artifact@v3
@@ -47,13 +48,9 @@ jobs:
           name: releaseGAA
           path: ./releaseGAA
 
-      - name: List files for debugging
-        run: ls -R ./releaseGAA
-
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "brilliant-prep-prod-app-svc"
-          slot-name: "production"
+          app-name: "urlshortener-app"
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: "./releaseGAA"
