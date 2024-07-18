@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: releaseGAA
-          path: releaseGAA/
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: "urlshortener-app"
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: releaseGAA/
+          package: releaseGAA
