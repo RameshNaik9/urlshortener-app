@@ -1,0 +1,18 @@
+{"level":"info","message":"Server started at PORT: 8001","service":"url-shortener-service","timestamp":"2024-07-18 15:26:32"}
+{"level":"info","message":"MongoDB connected","service":"url-shortener-service","timestamp":"2024-07-18 15:26:33"}
+{"level":"info","message":"Server started at PORT: 8001","service":"url-shortener-service","timestamp":"2024-07-18 15:27:11"}
+{"level":"info","message":"MongoDB connected","service":"url-shortener-service","timestamp":"2024-07-18 15:27:12"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:27:32"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:27:39"}
+{"level":"info","message":"Short URL generated: 4BPQPO_z5 for https://example.com","service":"url-shortener-service","timestamp":"2024-07-18 15:27:50"}
+{"level":"info","message":"Redirecting to https://example.com","service":"url-shortener-service","timestamp":"2024-07-18 15:27:53"}
+{"level":"info","message":"Redirecting to https://example.com","service":"url-shortener-service","timestamp":"2024-07-18 15:27:59"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:28:22"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:28:22"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:28:23"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:28:27"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:29:02"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:29:06"}
+{"level":"warn","message":"URL not found for shortId: manifest.json","service":"url-shortener-service","timestamp":"2024-07-18 15:33:16"}
+{"level":"info","message":"Server started at PORT: 8001","service":"url-shortener-service","timestamp":"2024-07-18 15:42:53"}
+{"level":"info","message":"MongoDB connected","service":"url-shortener-service","timestamp":"2024-07-18 15:43:00"}
